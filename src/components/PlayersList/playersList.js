@@ -1,0 +1,139 @@
+
+import * as React from 'react';
+import * as ReactDOM from "react-dom";
+import { ListViewComponent } from '@syncfusion/ej2-react-lists';
+import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
+
+class PlayersList extends React.Component {
+    state = {
+      ActionItemsList: [
+
+      ]
+    };
+  
+    addActionItemToState = (actionItem, dueDate) => {
+      let toBeAddedActionItem = {
+        ActionItem: actionItem,
+        DueDate: dueDate
+      };
+      this.setState(prevState => ({
+        ActionItemsList: prevState.ActionItemsList.concat(toBeAddedActionItem)
+      }));
+    };
+    deleteActionItemFromState = index => {
+      const ActionItemsList = [...this.state.ActionItemsList];
+      ActionItemsList.splice(index, 1);
+      this.setState({ ActionItemsList });
+    };
+    render() {
+      return (
+        <div>
+          <ActionItemForum addActionItemToState={this.addActionItemToState} />
+          <ActionItemList
+            actionItemsList={this.state.ActionItemsList}
+            deleteActionItemFromState={this.deleteActionItemFromState}
+          />
+        </div>
+      );
+    }
+  }
+  class ActionItemForum extends React.Component {
+    state = {
+      actionItem: "",
+      dueDate: ""
+    };
+  
+    handleChange = event => {
+      event.persist();
+      this.setState(prevState => ({
+        actionItem:
+          event.target.name === "actionItem"
+            ? event.target.value
+            : prevState.actionItem,
+
+      }));
+    };
+    handleSubmission = event => {
+      event.preventDefault();
+      this.props.addActionItemToState(this.state.actionItem, this.state.dueDate);
+      this.setState(prevState => ({
+        actionItem: "",
+        dueDate: ""
+      }));
+      alert("Action Item Added to List");
+    };
+  
+    render() {
+      return (
+        <div>
+          <form onSubmit={this.handleSubmission}>
+            <div className="form-group">
+              <label for="actionItem">Player Name:</label>
+              <input
+                type="text"
+                className="form-control"
+                id="actionItem"
+                onChange={this.handleChange}
+                value={this.state.actionItem}
+                name="actionItem"
+                required
+              />
+            </div>
+            
+            <button type="submit" className="btn btn-default">
+              Add
+            </button>
+          </form>
+        </div>
+      );
+    }
+  }
+  
+  const ActionItemList = props => {
+    const emptyList = length => {
+      if (length === 0) {
+        return (
+          <tr style={{ "text-align": "center" }}>
+            <td colSpan="3">No Record</td>
+          </tr>
+        );
+      }
+    };
+  
+    const deleteActionItemFromState = index => () => {
+      props.deleteActionItemFromState(index);
+    };
+  
+    return (
+      <div className="container">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Players</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {emptyList(props.actionItemsList.length)}
+            {props.actionItemsList.map((actionItem, i) => (
+              <tr key={i + 1}>
+                <td>{i + 1}</td>
+                <td>{actionItem.ActionItem}</td>
+                <td>{actionItem.DueDate}</td>
+                <td>
+                  <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={deleteActionItemFromState(i)}
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  };
+export default PlayersList;

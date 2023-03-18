@@ -1,0 +1,30 @@
+.menuButtons{
+    align-items: center;
+    border: 4px solid #83cfa3 !important;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: flex ;
+    font-family: wotfardregular ;
+    font-size: 2.6rem !important;
+    font-weight: 400 !important;
+    letter-spacing: .2em;
+    padding: 13px 35px;
+    text-transform: uppercase;
+    color: white !important;
+    background-color: black !important;
+    margin-top: 25px !important;
+    justify-content: center !important;
+    width: 400px !important;
+    
+}
+@media (min-width: 600px) {
+
+}
+.pageContainer{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #ffbc42;
+    
+}
