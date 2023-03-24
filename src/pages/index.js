@@ -4,3 +4,8 @@ export {default as Signup} from './Signup'
 export {default as HomePage} from './HomePage'
 export {default as GameMenu} from './GameMenu'
 export {default as CreateGame} from './CreateGame/index'
+export {default as GamesCreated} from './GamesCreated/index'
+export {default as PlayGame} from './PlayGame'
+export {default as EditPlayers} from './EditPlayers'
+export {default as LogoutPage} from './LogOut/index'
+

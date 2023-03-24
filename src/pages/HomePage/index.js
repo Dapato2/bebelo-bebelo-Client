@@ -1,21 +1,16 @@
-import "./index.css";
 import * as React from 'react';
-import {Navbar} from '../../components/index'
-import Typography from '@mui/material/Typography';
+import {ProductCategories,ProductSmokingHero,ProductHero,ProductHowItWorks,ProductValues,ProductCTA} from '../../views/index';
+import {Navbar} from '../../components'
 
-
-
-
-function HomePage() {
+function HomPage() {
   return (
-    <div>
+    <React.Fragment>
       <Navbar/>
-      <Typography className="titleH" > 
-        HOME PAGE
-      </Typography>
-    </div>
+      <ProductHero />
+      <ProductValues />
+      
+    </React.Fragment>
   );
 }
 
-export default HomePage;
-
+export default HomPage;

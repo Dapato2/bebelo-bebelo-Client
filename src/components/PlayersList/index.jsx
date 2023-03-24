@@ -3,19 +3,19 @@ import { useState } from 'react';
 import "./index.css"
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-const DeletableChips = (props) => {
+const PlayersList = (props) => {
 
   const[tags,setTags] = useState([])
 
   const removeTags = indexToRemove => {
     setTags([...tags.filter((_,index)=> index !== indexToRemove)])
-	props.selectedTags([...tags.filter((_,index)=> index !== indexToRemove)],"questions");
+	props.selectedTags([...tags.filter((_,index)=> index !== indexToRemove)],"names");
 
   };
   const addTags = event => {
 		if (event.target.value !== "") {
 			setTags([...tags, event.target.value]);
-			props.selectedTags([...tags, event.target.value],"questions");
+			props.selectedTags([...tags, event.target.value],"names");
 			event.target.value = "";
 		}
 	};
@@ -38,7 +38,7 @@ const DeletableChips = (props) => {
       <input
 				type="text"
 				onKeyUp={event => event.key === "Enter" ? addTags(event) : null}
-				placeholder="Press enter to add QUESTIONS..."
+				placeholder="Press enter to add PLAYERS..."
 			/>
       
       
@@ -46,4 +46,4 @@ const DeletableChips = (props) => {
   );
 };
 
-export default DeletableChips;
+export default PlayersList;

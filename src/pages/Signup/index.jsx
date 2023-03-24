@@ -42,7 +42,6 @@ function SignupPage() {
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
       });
-      console.log("Hasta aqui si funciona")
   };
 
   return (

@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+body {
+    background: #eee;
+    text-align: center;
+    
+  }
+  .pageDiv2{
+  position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    background-image: linear-gradient(to right top, #fbab7e, #c17675, #7a4d5f, #372b39, #000001);
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    }
+  
+  .mui-card2 {
+      background: #eee;
+    border-radius: 8px;
+    display: inline-block;
+    height: 280px;
+    margin: 2rem;
+    position: relative;
+    width: 280px;
+  }
+  
+  .xs-shadow2 {
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+  
+  .xs-shadow2:hover {
+    box-shadow: 0 14px 28px
+    rgba(0,0,0,0.25), 0 10px 10px
+    rgba(0,0,0,0.22);
+  }
+ 
+  .titleDiv2{
+    margin: 20px !important ;
+    padding: 20px !important ;
+  }
+
+  .createdTitle2{
+    font-size: 3rem !important;
+    color: white;
+
+  }
+
+  .cardsContainer2{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 1048px;
+    height: auto;
+  }
+  .gamesPresentT2{
+    color: #000001 !important;
+    font-size: 2rem !important;
+    margin: 6px;
+  }
+  .playButton2{
+    position: absolute !important;
+    left: 110px !important;
+    bottom: 0px;
+    margin-bottom: 6px !important;
+    text-decoration: none;
+  }

@@ -29,8 +29,8 @@ function GameMenu() {
                 </Button>
             </div>
             < div  className="divButton">
-                <Button href="/game-created " className="menuButtons">
-                    JUEGOS CREADOS
+                <Button href="/games-created " className="menuButtons">
+                Games Created
                 </Button>
             </div>
             </div>

@@ -4,10 +4,16 @@ import {AppBar,Box,Toolbar,IconButton,Typography,Menu,Container,Avatar,Button,To
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import { Link } from 'react-router-dom';
 
-const pages = ['New Game', 'Games History', 'Creator'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [
+  {name:'PLAY GAME' , url:"/game"},
+  {name:'Creator', url: "/"}
+];
+const settings = [
+  {name:'Profile' ,url:'/profile'},
+  {name:'Logout', url:'/logout'}
+];
 
-function ResponsiveNavbar() {
+function ResponsiveNavbar({_id,email,username,...restUser}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -81,11 +87,7 @@ function ResponsiveNavbar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+
             </Menu>
           </Box>
           <Typography
@@ -106,14 +108,25 @@ function ResponsiveNavbar() {
             
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
+     
+           {pages.map((page, index) => (
+            <Link
+              key={index}
+              to={page.url}
+              style={{
+                padding: "6px 4px",
+                color: "white",
+                textDecoration: "none",
+              }}
+            >
+              <MenuItem>             
+               <Button>
+              <Typography textAlign="center">{page.name}</Typography>
+              </Button></MenuItem>
+
+              
+              
+            </Link>
             ))}
           </Box>
 
@@ -139,14 +152,25 @@ function ResponsiveNavbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
+     
+           {settings.map((settings, index) => (
+            <Link
+              key={index}
+              to={settings.url}
+              style={{
+                color: "black",
+                textDecoration: "none"
+              }}
+            >
+              <MenuItem>              
+              <Typography textAlign="center">{settings.name}</Typography>
+            </MenuItem>    
+            </Link>
+            ))}
                 
                 
                 
-              ))}
+             
             </Menu>
           </Box>
         </Toolbar>
