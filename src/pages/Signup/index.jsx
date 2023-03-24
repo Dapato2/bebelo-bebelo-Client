@@ -35,7 +35,7 @@ function SignupPage() {
 
         storeToken(response.data.authToken)
         authenticateUser();
-        navigate("/home");
+        navigate("/");
       })
       .catch((error) => {
         // If the request resolves with an error, set the error message in the state
