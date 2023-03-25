@@ -1,3 +1,13 @@
+-----QUIZ APP----
+
+App to create and play quizzes
+
+Test login:
+
+email: diego.perfect.7@gmail.com
+Password: Dapato2
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
