@@ -25,20 +25,17 @@ function SignupPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Create an object representing the request body
     const requestBody = { email, password, fullName, username };
 
 
       signupEp(requestBody)
       .then((response) => {
-        // If the POST request is successful redirect to the login page
 
         storeToken(response.data.authToken)
         authenticateUser();
         navigate("/");
       })
       .catch((error) => {
-        // If the request resolves with an error, set the error message in the state
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
       });
@@ -115,12 +112,7 @@ function SignupPage() {
               />
             </Grid>
             <Grid item xs={12}>
-             {/**
-          *      <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label=""
-              />
-          */}
+
             </Grid>
           </Grid>
           <Button

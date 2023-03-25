@@ -29,13 +29,12 @@ function PlayGame() {
     const [playerSelected,setPlayerSelected] = useState(0);
     const [timeRunning, setTimeRunning] = useState(true)
 
-    //modal
     const [open, setOpen] = useState(false);
     const handleOpen = () => {setOpen(true)
     setTimeRunning(false)
     };
     const handleClose = () => setOpen(false);
-//modalFinish
+
     const [openFinish, setOpenFinish] = useState(false);
     const handleOpenFinish = () => {setOpenFinish(true)
 
@@ -121,7 +120,7 @@ function PlayGame() {
             {questions && questions.length > 0 ? (
               <CustomizedTables playersNames={gameCreated.playersName} playerSelected = {playerSelected} />
             ) : (
-              <p>Oprimpe para comenzar...</p>
+              <p>Oprime para comenzar...</p>
             )}
             {noQuestions && (
               <div>

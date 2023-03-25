@@ -63,7 +63,7 @@ const styles = ({ theme }) => ({
     fontSize: 18,
   },
   [`& .${selectClasses.select}`]: {
-    height: 'auto',
+    height: 'auto', 
     borderRadius: 0,
   },
   [`& .${selectClasses.icon}`]: {

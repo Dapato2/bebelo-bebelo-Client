@@ -11,11 +11,9 @@ import logoImg from "../../assets/logoImg.png";
 const theme = createTheme({
   palette: {
     primary: {
-      // Purple and green play nicely together.
       main: "#000004",
     },
     secondary: {
-      // This is green.A700 as hex.
       main: '#11cb5f',
     },
     third:{
@@ -27,7 +25,6 @@ const theme = createTheme({
  function Login(props) {
 
     const navigate = useNavigate()
-    //pongo en uso el contexto
     const {storeToken, authenticateUser} = useContext(AuthContext)
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("") 

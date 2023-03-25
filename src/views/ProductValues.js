@@ -1,10 +1,12 @@
 import * as React from 'react';
-
+import CreateIcon from '@mui/icons-material/Create';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import  Typography1 from '../components/Typography1';
 import appCurvyLines from '../assets/appCurvyLines.png'
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import HistoryIcon from '@mui/icons-material/History';
 import { color } from '@mui/system';
 
 const item = {
@@ -30,56 +32,46 @@ function ProductValues() {
         <Grid container spacing={5}>
           <Grid item xs={12} md={4}>
             <Box sx={item } >
-              <Box
-                component="img"
-                src="/static/themes/onepirate/productValues1.svg"
-                alt="suitcase"
-                sx={{ height: 55 }}
+            <CreateIcon 
+               sx={{ height: 55,  }}
               />
+
               <Typography1 variant="h6" sx={{ my: 5 }}>
-                The best luxury hotels
+                Create your first Quiz!
               </Typography1>
               <Typography1 variant="h5">
                 {
-                  'From the latest trendy boutique hotel to the iconic palace with XXL pool'
+                  'You will have the freedom of creating your own Quiz, any topic, any questions.  '
                 }
 
+               
+              </Typography1>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Box sx={item}>
+              <PersonAddIcon 
+               sx={{ height: 55,  }}
+              
+              />
+              <Typography1 variant="h6" sx={{ my: 5 }}>
+                Add Players
+              </Typography1>
+              <Typography1 variant="h5">
                 {
-                  ', go for a mini-vacation just a few subway stops away from your home.'
+                  'Add as many players as you want. '
                 }
               </Typography1>
             </Box>
           </Grid>
           <Grid item xs={12} md={4}>
             <Box sx={item}>
-              <Box
-                component="img"
-                src="/static/themes/onepirate/productValues2.svg"
-                alt="graph"
-                sx={{ height: 55 }}
+              <HistoryIcon
+               sx={{ height: 55,  }}
+              
               />
               <Typography1 variant="h6" sx={{ my: 5 }}>
-                New experiences
-              </Typography1>
-              <Typography1 variant="h5">
-                {
-                  'Privatize a pool, take a Japanese bath or wake up in 900m2 of garden… '
-                }
-
-                {'your Sundays will not be alike.'}
-              </Typography1>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Box sx={item}>
-              <Box
-                component="img"
-                src="/static/themes/onepirate/productValues3.svg"
-                alt="clock"
-                sx={{ height: 55 }}
-              />
-              <Typography1 variant="h6" sx={{ my: 5 }}>
-                Exclusive rates
+                Play previous Quizes
               </Typography1>
               <Typography1 variant="h5">
                 {'By registering, you will access specially negotiated rates '}

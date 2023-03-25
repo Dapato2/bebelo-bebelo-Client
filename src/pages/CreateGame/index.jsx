@@ -7,6 +7,7 @@ import { signupEp } from "../../services/auth.services";
 import {createEp} from "../../services/game.services"
 import {addPlayersEp} from "../../services/players.services"
 import "./index.css"
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
 function CreateGame() {
 
@@ -51,7 +52,15 @@ function CreateGame() {
 
   return (
     <div className='pageContainerCreate'>
+                  <div className="divBack">
+            <Button href="/game">
+               <ChevronLeftIcon sx={{fontSize:"90px",color:"#0b5351",textDecoration:"none"}} />
+                
+            </Button>
+            </div>
+
       <Container className='containerDiv'>
+        
         <Box
           sx={{
             marginTop: 8,

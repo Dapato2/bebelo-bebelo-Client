@@ -5,11 +5,10 @@ import SportsBarIcon from '@mui/icons-material/SportsBar';
 import { Link } from 'react-router-dom';
 
 const pages = [
-  {name:'PLAY GAME' , url:"/game"},
-  {name:'Creator', url: "/"}
+  {name:'PLAY GAME' , url:"/game"}
 ];
 const settings = [
-  {name:'Profile' ,url:'/profile'},
+  
   {name:'Logout', url:'/logout'}
 ];
 
@@ -33,10 +32,10 @@ function ResponsiveNavbar({_id,email,username,...restUser}) {
   };
 
   return (
-    <AppBar position="static" background-color='#CFFF8D' >
+    <AppBar position="static" sx={{backgroundColor:"#000000"}} >
       <Container maxWidth="xl" >
         <Toolbar disableGutters>
-          <SportsBarIcon sx={{ display: { xs: 'none', md: 'flex',color:'#A8E890'}, mr: 2 }}  />
+          <SportsBarIcon sx={{ display: { xs: 'none', md: 'flex',color:'#A8E890',fontSize:'50px'}, mr: 2 }}  />
           <Typography
             variant="h7"
             noWrap
@@ -111,21 +110,19 @@ function ResponsiveNavbar({_id,email,username,...restUser}) {
      
            {pages.map((page, index) => (
             <Link
+              className='menuLink'
               key={index}
               to={page.url}
               style={{
                 padding: "6px 4px",
-                color: "white",
                 textDecoration: "none",
               }}
+           
             >
               <MenuItem>             
                <Button>
-              <Typography textAlign="center">{page.name}</Typography>
-              </Button></MenuItem>
-
-              
-              
+              <Typography sx={{ color: "white" }} textAlign="center">{page.name}</Typography>
+              </Button></MenuItem>    
             </Link>
             ))}
           </Box>
